@@ -1,7 +1,7 @@
 # QALU
 Quantum Arithmetic Logic Unit
 
-<a href="qalu.py">Download QALU </a>
+<a href="https://raw.githubusercontent.com/alihakimtaskiran/QALU/main/qalu.py">Download QALU </a>
 
 For further documentation, see <a href="QALU.ipynb">here</a>
 |Function|Schema|Superposed State|
