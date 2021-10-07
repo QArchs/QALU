@@ -28,32 +28,25 @@ def half_adder(circ, a, b, carry,sum_):
     xor_(circ,a,b,sum_)
     and_(circ,a,b,carry)
     
-def full_adder(circ,a,b,c_in,t_0,t_1,t_2,c_out,sum_):
-    xor_(circ,a,b,t_0)
-    xor_(circ,t_0,c_in,sum_)
-    and_(circ,a,b,t_1)
-    and_(circ,c_in,t_0,t_2)
-    or_(circ,t_1,t_2,c_out)
-    circ.ccx(c_in,t_0,t_2)
-    circ.cx(a,t_0)
-    circ.cx(b,t_0)
-    circ.ccx(a,b,t_1)
+def full_adder(circ,a,b,c_in,c_out,sum_):
+    qc.cx(a,sum_)
+    qc.cx(b,sum_)
+    qc.cx(c_in,sum_)
+    qc.ccx(a,b,c_out)
+    qc.ccx(b,c_in,c_out)
+    qc.ccx(c_in,a,c_out)
     
 def half_subtractor(circ, a, b, carry, diff):
     xor_(circ,a,b,diff)
     circ.ccx(b,diff,carry)
     
-def full_subtractor(circ,a,b,c_in,t_0,t_1,t_2,c_out,diff):
-    xor_(circ,a,b,t_0)
-    xor_(circ,t_0,c_in,diff)
-    circ.x(a)
-    circ.ccx(a,b,t_1)
-    circ.x(t_0)
-    circ.ccx(t_0,c_in,t_2)
-    or_(circ,t_1,t_2,c_out)
-    circ.ccx(c_in,t_0,t_2)
-    circ.ccx(a,b,t_1)
-    circ.x(t_0)
-    circ.x(a)
-    circ.cx(a,t_0)
-    circ.cx(b,t_0)
+def full_subtractor(circ,a,b,b_in,b_out,diff):
+    qc.cx(a,diff)
+    qc.cx(b,diff)
+    qc.cx(b_in,diff)
+    qc.x(a)
+    qc.ccx(b_in,a,b_out)
+    qc.ccx(b_in,b,b_out)
+    qc.ccx(a,b,b_out)
+    qc.x(a)
+    
