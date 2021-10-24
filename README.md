@@ -16,3 +16,4 @@ For further documentation, see <a href="QALU.ipynb">here</a>
 |full_adder()|![](src/fa_s__.png)|![](src/fa_q.png)|
 |half_subtractor()|![](src/hs_s_.png)|![](src/hs_q.png)|
 |full_subtractor()|![](src/fs_s__.png)|![](src/fs_q.png)|
+|multi_qubits_adder()|![](src/mqa.png)|No state sphere provided|
