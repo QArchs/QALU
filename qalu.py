@@ -76,3 +76,30 @@ def multi_qubits_adder(circ,A,B,T,C):
     for i in range(1,len(A)-1):
         full_adder(circ,A[i],B[i],T[i-1],T[i],C[i])
     full_adder(circ,A[-1],B[-1],T[-1],C[-1],C[-2])
+
+def multi_qubits_subtractor(circ,A,B,T,C):
+    if not (type(A)==tuple or type(A)==list):
+        raise TypeError("A must be a tuple or list")
+    if not (type(B)==tuple or type(B)==list):
+        raise TypeError("B must be a tuple or list")
+    if not (type(T)==tuple or type(T)==list):
+        raise TypeError("T must be a tuple or list")
+    if not (type(C)==tuple or type(C)==list):
+        raise TypeError("C must be a tuple or list")
+    if not len(A)==len(B):
+        raise ValueError("# of qubits of A and B must be equal")
+    if not len(A)+1==len(C):
+        raise ValueError("C must has one more qubit than A and B")
+    if not len(A)-1==len(T):
+        raise ValueError("T must has one more less qubit than A and B")
+    A=tuple(A)
+    B=tuple(B)
+    T=tuple(T)
+    C=tuple(C)
+    if len(set(A+B+T+C))<len(A+B+T+C):
+        raise ValueError("Qubits must not coindice")
+
+    half_subtractor(circ,A[0],B[0],T[0],C[0])
+    for i in range(1,len(A)-1):
+        full_subtractor(circ,A[i],B[i],T[i-1],T[i],C[i])
+    full_subtractor(circ,A[-1],B[-1],T[-1],C[-1],C[-2])
