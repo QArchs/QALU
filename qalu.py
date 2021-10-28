@@ -71,11 +71,15 @@ def multi_qubits_adder(circ,A,B,T,C):
     C=tuple(C)
     if len(set(A+B+T+C))<len(A+B+T+C):
         raise ValueError("Qubits must not coindice")
-        
     half_adder(circ,A[0],B[0],T[0],C[0])
     for i in range(1,len(A)-1):
         full_adder(circ,A[i],B[i],T[i-1],T[i],C[i])
     full_adder(circ,A[-1],B[-1],T[-1],C[-1],C[-2])
+    for i in range(len(A)-1,1,-1):
+        circ.ccx(T[i-2],A[i-1],T[i-1])
+        circ.ccx(T[i-2],B[i-1],T[i-1])
+        circ.ccx(B[i-1],A[i-1],T[i-1])
+    circ.ccx(A[0],B[0],T[0])
 
 def multi_qubits_subtractor(circ,A,B,T,C):
     if not (type(A)==tuple or type(A)==list):
