@@ -6,15 +6,15 @@ Quantum Arithmetic Logic Unit
 For further documentation, see <a href="QALU.ipynb">here</a>
 |Function|Schema|Superposed State|
 |--|-|--|
-|and_()|![](src/and_s_.png)|![](src/and_q.png)|
-|nand_()|![](src/nand_s_.png)|![](src/nand_q.png)|
-|or_()|![](src/or_s_.png)|![](src/or_q.png)|
-|nor_()|![](src/nor_s_.png)|![](src/nor_q.png)|
-|xor_()|![](src/xor_s_.png)|![](src/xor_q.png)|
-|xnor_()|![](src/xnor_s_.png)|![](src/xnor_qq.png)|
-|half_adder()|![](src/ha_s_.png)|![](src/ha_q.png)|
-|full_adder()|![](src/fa_s__.png)|![](src/fa_q.png)|
-|half_subtractor()|![](src/hs_s_.png)|![](src/hs_q.png)|
-|full_subtractor()|![](src/fs_s__.png)|![](src/fs_q.png)|
-|multi_qubits_adder()|![](src/mqa.png)|No state sphere provided|
-|multi_qubits_subtractor()|![](src/mqs.png)|No state sphere provided|
+|**and_**(circ,a,b,out)|![](src/and_s_.png)|![](src/and_q.png)|
+|**nand_**(circ,a,b,out)|![](src/nand_s_.png)|![](src/nand_q.png)|
+|**or_**(circ,a,b,out)|![](src/or_s_.png)|![](src/or_q.png)|
+|**nor_**(circ,a,b,out)|![](src/nor_s_.png)|![](src/nor_q.png)|
+|xor_(circ,a,b,out)|![](src/xor_s_.png)|![](src/xor_q.png)|
+|xnor_(circ,a,b,out)|![](src/xnor_s_.png)|![](src/xnor_qq.png)|
+|half_adder(circ, a, b, carry,sum_)|![](src/ha_s_.png)|![](src/ha_q.png)|
+|full_adder(circ,a,b,c_in,c_out,sum_)|![](src/fa_s__.png)|![](src/fa_q.png)|
+|half_subtractor(circ, a, b, bor, diff)|![](src/hs_s_.png)|![](src/hs_q.png)|
+|full_subtractor(circ,a,b,b_in,b_out,diff)|![](src/fs_s__.png)|![](src/fs_q.png)|
+|multi_qubits_adder(circ,A,B,T,C)|![](src/mqa.png)|No state sphere provided|
+|multi_qubits_subtractor(circ,A,B,T,C)|![](src/mqs.png)|No state sphere provided|
