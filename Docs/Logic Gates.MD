@@ -10,7 +10,7 @@
    * **A** is one of the qubits that it will be processed. It's an integer.
    * **B** is one of the qubits that it will be processed. It's an integer.
    * **C** is the qubit that it represents result. It's an integer.
-   |A|B|A&B|
+   |A|B|C|
    |--|--|--|
    |1|1|1|
    |1|0|0|
@@ -18,8 +18,7 @@
    |0|0|0|
    ***
  ## or_(circ,a,b,out)
- <img src="src/or.png" height="100">
- ![](../src/or_s_.png)
+ <img src="src/or.png" height="100"> <img src="../src/or_s_.png">
 
    And gate is used to perform "or operation". If both inputs are false, then it returns flase. But at least one of them is true, it returns true
    It has 4 arguments:
@@ -27,11 +26,13 @@
    * **A** is one of the qubits that it will be processed. It's an integer.
    * **B** is one of the qubits that it will be processed. It's an integer.
    * **C** is the qubit that it represents result. It's an integer.
-   |A|B|A&B|
+  
+   |A|B|C|
    |--|--|--|
    |1|1|1|
    |1|0|1|
    |0|1|1|
    |0|0|0|
+   
    ***
    
