@@ -13,9 +13,9 @@ It has these functions
 |**nor_**(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#nor_circabout) |
 |**xor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xor_circabout) |
 |**xnor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xnor_circabout) |
-|**half_adder**(circ, a, b, carry,sum_)|![get information]( |
-|**full_adder**(circ,a,b,c_in,c_out,sum_)|![get information]( |
-|**half_subtractor**(circ, a, b, bor, diff)|![get information]( |
-|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![get information]( |
-|**multi_qubits_adder**(circ,A,B,T,C)|![get information]( |
-|**multi_qubits_subtractor**(circ,A,B,T,C)|![get information]( |
+|**half_adder**(circ, a, b, carry,sum_)|![get information]()|
+|**full_adder**(circ,a,b,c_in,c_out,sum_)|![get information]() |
+|**half_subtractor**(circ, a, b, bor, diff)|![get information]() |
+|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![get information]() |
+|**multi_qubits_adder**(circ,A,B,T,C)|![get information]( )|
+|**multi_qubits_subtractor**(circ,A,B,T,C)|![get information]() |
