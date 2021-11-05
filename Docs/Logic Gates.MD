@@ -90,10 +90,10 @@
    |0|0|1|
    
    ***
-## xor_(circ,a,b,out)
- <img src="src/xor.png" height="100"> <img src="../src/xor_s_.png">
+## xnor_(circ,a,b,out)
+ <img src="../src/xor_s_.png">
 
-   XOR gate is used to perform "xor operation". If both inputs are same, then it returns true. If both of them same, it returns false
+   XNOR gate is used to perform "xnor operation". If both inputs are same, then it returns true. If both of them same, it returns false
    It has 4 arguments:
    * **circ** is quantum circuit that you will add the gate.
    * **A** is one of the qubits that it will be processed. It's an integer.
