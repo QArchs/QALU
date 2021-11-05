@@ -55,4 +55,56 @@
    |0|0|0|
    
    ***
+## nand_(circ,a,b,out)
+![](../src/nand_s_.png)
+
+   NAND gate is used to perform "nand operation". If both inputs are true, then it returns false. If at least one of them is false, it returns true
+   It has 4 arguments:
+   * **circ** is quantum circuit that you will add the gate.
+   * **A** is one of the qubits that it will be processed. It's an integer.
+   * **B** is one of the qubits that it will be processed. It's an integer.
+   * **C** is the qubit that it represents result. It's an integer.
+  
+   |A|B|C|
+   |--|--|--|
+   |1|1|0|
+   |1|0|1|
+   |0|1|1|
+   |0|0|1|
+   ***
+ ## nor_(circ,a,b,out)
+ <img src="../src/nor_s_.png">
+
+   NOR gate is used to perform "nor operation". If both inputs are false, then it returns true. If at least one of them is true, it returns true
+   It has 4 arguments:
+   * **circ** is quantum circuit that you will add the gate.
+   * **A** is one of the qubits that it will be processed. It's an integer.
+   * **B** is one of the qubits that it will be processed. It's an integer.
+   * **C** is the qubit that it represents result. It's an integer.
+  
+   |A|B|C|
+   |--|--|--|
+   |1|1|0|
+   |1|0|0|
+   |0|1|0|
+   |0|0|1|
    
+   ***
+## xor_(circ,a,b,out)
+ <img src="src/xor.png" height="100"> <img src="../src/xor_s_.png">
+
+   XOR gate is used to perform "xor operation". If both inputs are same, then it returns true. If both of them same, it returns false
+   It has 4 arguments:
+   * **circ** is quantum circuit that you will add the gate.
+   * **A** is one of the qubits that it will be processed. It's an integer.
+   * **B** is one of the qubits that it will be processed. It's an integer.
+   * **C** is the qubit that it represents result. It's an integer.
+  
+   |A|B|C|
+   |--|--|--|
+   |1|1|1|
+   |1|0|0|
+   |0|1|0|
+   |0|0|1|
+   
+   ***
