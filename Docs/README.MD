@@ -5,17 +5,17 @@
 
    As we attempt to perform logical operations on quantum computers, alignment of quantum gates are challenged us. QALU overcomes these problems. We only call the name of logic gate or further combinations of them.
 It has these functions
-|Function|Schema|Superposed State|
-|--|-|--|
-|**and_**(circ,a,b,out)|![](../src/and_s_.png)|![](../src/and_q.png)|
-|**nand_**(circ,a,b,out)|![](../src/nand_s_.png)|![](../src/nand_q.png)|
-|**or_**(circ,a,b,out)|![](../src/or_s_.png)|![](../src/or_q.png)|
-|**nor_**(circ,a,b,out)|![](../src/nor_s_.png)|![](../src/nor_q.png)|
-|**xor**_(circ,a,b,out)|![](../src/xor_s_.png)|![](../src/xor_q.png)|
-|**xnor**_(circ,a,b,out)|![](../src/xnor_s_.png)|![](../src/xnor_qq.png)|
-|**half_adder**(circ, a, b, carry,sum_)|![](../src/ha_s_.png)|![](../src/ha_q.png)|
-|**full_adder**(circ,a,b,c_in,c_out,sum_)|![](../src/fa_s__.png)|![](s../rc/fa_q.png)|
-|**half_subtractor**(circ, a, b, bor, diff)|![](../src/hs_s_.png)|![](../src/hs_q.png)|
-|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![](../src/fs_s__.png)|![](../src/fs_q.png)|
-|**multi_qubits_adder**(circ,A,B,T,C)|![](../src/mqa.png)|No state sphere provided|
-|**multi_qubits_subtractor**(circ,A,B,T,C)|![](../src/mqs.png)|No state sphere provided|
+|Function|Info|
+|--|--|
+|**and_**(circ,a,b,out)| ![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#and_circabout) |
+|**nand_**(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#nand_circabout )|
+|**or_**(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#or_circabout) |
+|**nor_**(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#nor_circabout) |
+|**xor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xor_circabout) |
+|**xnor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xnor_circabout) |
+|**half_adder**(circ, a, b, carry,sum_)|![get information]()|
+|**full_adder**(circ,a,b,c_in,c_out,sum_)|![get information]() |
+|**half_subtractor**(circ, a, b, bor, diff)|![get information]() |
+|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![get information]() |
+|**multi_qubits_adder**(circ,A,B,T,C)|![get information]( )|
+|**multi_qubits_subtractor**(circ,A,B,T,C)|![get information]() |
