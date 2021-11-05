@@ -3,7 +3,7 @@ Quantum Arithmetic Logic Unit
 
 <a href="https://raw.githubusercontent.com/alihakimtaskiran/QALU/main/qalu.py">Download QALU </a>
 
-For further documentation, see <a href="QALU.ipynb">here</a>
+For Docs, <a href="https://github.com/alihakimtaskiran/QALU/blob/main/Docs/README.MD">cilck here</a>
 |Function|Schema|Superposed State|
 |--|-|--|
 |**and_**(circ,a,b,out)|![](src/and_s_.png)|![](src/and_q.png)|
