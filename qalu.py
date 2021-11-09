@@ -81,6 +81,16 @@ def multi_qubits_adder(circ,A,B,T,C):
         circ.ccx(B[i-1],A[i-1],T[i-1])
     circ.ccx(A[0],B[0],T[0])
 
+def __fs(circ,a,b,b_in,b_out,diff):
+    circ.cx(a,diff)
+    circ.cx(b,diff)
+    circ.cx(b_in,diff)
+    circ.x(a)
+    circ.ccx(b_in,a,b_out)
+    circ.ccx(b_in,b,b_out)
+    circ.ccx(a,b,b_out)
+
+    
 def multi_qubits_subtractor(circ,A,B,T,C):
     if not (type(A)==tuple or type(A)==list):
         raise TypeError("A must be a tuple or list")
@@ -105,5 +115,11 @@ def multi_qubits_subtractor(circ,A,B,T,C):
 
     half_subtractor(circ,A[0],B[0],T[0],C[0])
     for i in range(1,len(A)-1):
-        full_subtractor(circ,A[i],B[i],T[i-1],T[i],C[i])
-    full_subtractor(circ,A[-1],B[-1],T[-1],C[-1],C[-2])
+        __fs(circ,A[i],B[i],T[i-1],T[i],C[i])
+    __fs(circ,A[-1],B[-1],T[-1],C[-1],C[-2])
+    for i in range(len(A)-2,0,-1):
+        circ.ccx(A[i],B[i],T[i])
+        circ.ccx(B[i],T[i-1],T[i])
+        circ.ccx(A[i],T[i-1],T[i])
+    circ.ccx(C[0],B[0],T[0])
+    circ.x(A[1:])
