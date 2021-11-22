@@ -16,7 +16,7 @@ def or_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer")
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
