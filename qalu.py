@@ -5,7 +5,7 @@ def and_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer")
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.ccx(a,b,out)
 
@@ -29,7 +29,7 @@ def xor_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer") 
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
@@ -41,7 +41,7 @@ def nand_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer")
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.ccx(a,b,out)
     circ.x(out)
@@ -53,7 +53,7 @@ def nor_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer")
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
@@ -67,7 +67,7 @@ def xnor_(circ,a,b,out):
         raise TypeError("b must be an integer")
     if not type(out)==int:
         raise TypeError("out must be an integer")
-    if not tuple({a,b,out})==(a,b,out):
+    if not len(tuple({a,b,out}))==len((a,b,out)):
         raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
@@ -172,3 +172,68 @@ def multi_qubits_subtractor(circ,A,B,T,C):
         circ.ccx(A[i],T[i-1],T[i])
     circ.ccx(C[0],B[0],T[0])
     circ.x(A[1:])
+
+class utils():
+    @staticmethod
+    def analyse(sv,p,q,t):
+        if p=="-":
+            probs=[]
+            
+            for i in range(len(sv)):
+                if not sv[i]==0:
+                    probs.append([i,abs(sv[i])**2])
+            l=len(probs)
+            for i in range(l):
+                s=bin(probs[i][0])[2:]
+                probs[i].append("0"*(3*q+t+1-len(s))+s)
+                
+            for i in range(l):
+                s=probs[i][2]
+                probs[i].append(s[:q+1]+"-"+s[q+1:t+q+1]+"-"+s[t+q+1:t+2*q+1]+"-"+s[2*q+t+1:3*q+t+1])
+            for i in range(l):
+                s=probs[i][3].split("-")
+                c,b,a=int(s[0][1:],2),int(s[2][1:],2),int(s[3][1:],2)
+                c,b,a=int(s[0],2),int(s[2],2),int(s[3],2)
+                a=int(s[3],2)
+                b=int(s[2],2)
+                if s[0][0]=="0":
+                    c=int(s[0],2)
+                else:
+                    c=-2**(q)+int(s[0][1:],2)
+                probs[i].append((str(c)+"="+str(a)+"-"+str(b)).replace("--","+"))            
+            return probs
+        
+        elif p=="+":
+            probs=[]
+            for i in range(len(sv)):
+                if not sv[i]==0:
+                    probs.append([i,abs(sv[i])**2])
+            for i in range(len(probs)):
+                probs[i][0]=bin(probs[i][0])[2:]
+                probs[i][0]="0"*(3*q+1+t-len((probs[i][0])))+probs[i][0]
+            
+            for i in range(len(probs)):
+                probs[i].append(probs[i][0][:q+1]+"-"+probs[i][0][q+1:t+q+1]+"-"+probs[i][0][q+t+1:2*q+t+1]+"-"+probs[i][0][2*q+t+1:3*q+t+1])
+            for i in range(len(probs)):
+                m=""
+                t=probs[i][2].split("-")
+                m+=str(int(t[0],2))+"="+str(int(t[2],2))+"+"+str(int(t[3],2))
+                probs[i].append(m)
+            return probs
+        elif p=="×":
+            probs=[]
+            for i in range(len(sv)):
+                if not sv[i]==0:
+                    probs.append([i,abs(sv[i])**2])
+            for i in range(len(probs)):
+                probs[i][0]=bin(probs[i][0])[2:]
+                probs[i][0]="0"*(3*q+1+t-len((probs[i][0])))+probs[i][0]
+            
+            for i in range(len(probs)):
+                probs[i].append(probs[i][0][:q+1]+"-"+probs[i][0][q+1:t+q+1]+"-"+probs[i][0][q+t+1:2*q+t+1]+"-"+probs[i][0][2*q+t+1:3*q+t+1])
+            for i in range(len(probs)):
+                m=""
+                t=probs[i][2].split("-")
+                m+=str(int(t[0],2))+"="+str(int(t[2],2))+"×"+str(int(t[3],2))
+                probs[i].append(m)
+            return probs
