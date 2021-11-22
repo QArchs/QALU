@@ -1,28 +1,77 @@
 def and_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer")
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.ccx(a,b,out)
 
 def or_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer")
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
     circ.ccx(a,b,out)
     
 def xor_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer") 
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
     
 def nand_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer")
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.ccx(a,b,out)
     circ.x(out)
     
 def nor_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer")
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
     circ.ccx(a,b,out)
     circ.x(out)
 
 def xnor_(circ,a,b,out):
+    if not type(a)==int:
+        raise TypeError("a must be an integer")
+    if not type(b)==int:
+        raise TypeError("b must be an integer")
+    if not type(out)==int:
+        raise TypeError("out must be an integer")
+    if not tuple({a,b,out})==(a,b,out):
+        raise ValueError("Qubits mustn't be coincided")
     circ.cx(a,out)
     circ.cx(b,out)
+    circ.x(out)
 
 def half_adder(circ, a, b, carry,sum_):
     xor_(circ,a,b,sum_)
