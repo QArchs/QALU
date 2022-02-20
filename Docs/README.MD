@@ -14,8 +14,8 @@ It has these functions
 |**xor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xor_circabout) |
 |**xnor**_(circ,a,b,out)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Logic%20Gates.MD#xnor_circabout) |
 |**half_adder**(circ, a, b, carry,sum_)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#half_addercirc-a-b-carrysum_)|
-|**full_adder**(circ,a,b,c_in,c_out,sum_)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#full_addercircabc_inc_outsum_) |
+|**full_adder**(circ,a,b,c_in,c_out,sum_)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#full_addercirca-b-c_in-c_out-sum_) |
 |**half_subtractor**(circ, a, b, bor, diff)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#half_subtractorcirc-a-b-bor-diff) |
-|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#full_subtractorcircabb_inb_outdiff) |
-|**multi_qubits_adder**(circ,A,B,T,C)|![get information]( https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#multi_qubits_addercircabtc)|
-|**multi_qubits_subtractor**(circ,A,B,T,C)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#multi_qubits_subtractorcircabtc) |
+|**full_subtractor**(circ,a,b,b_in,b_out,diff)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#full_subtractorcirc-a-b-b_in-b_out-diff )|
+|**multi_qubits_adder**(circ,A,B,T,C)|![get information]( https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#multi_qubits_addercirc-a-b-t-c)|
+|**multi_qubits_subtractor**(circ,A,B,T,C)|![get information](https://github.com/alihakimtaskiran/QALU/blob/main/Docs/Arithmetic%20Operations.MD#multi_qubits_subtractorcirc-a-b-t-c) |
