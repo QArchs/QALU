@@ -1,8 +1,8 @@
 # QALU
 Quantum Arithmetic Logic Unit
 
-<a href="https://raw.githubusercontent.com/alihakimtaskiran/QALU/main/qalu.py">Download QALU </a>
-
+    pip install QALU
+    
 For Docs, <a href="https://github.com/alihakimtaskiran/QALU/blob/main/Docs/README.MD">cilck here</a>
 |Function|Schema|Superposed State|
 |--|-|--|
